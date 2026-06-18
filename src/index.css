@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+.dark-theme {
+  background-color: var(--dark-bg, #0f172a) !important;
+  color: #f1f5f9;
+  color-scheme: dark;
+}
+
+/* Beautiful dark theme custom overrides to replace filter trick */
+.dark-theme,
+.dark-theme body,
+.dark-theme #root {
+  background-color: var(--dark-bg, #0f172a) !important;
+  color: #f1f5f9 !important;
+}
+
+/* Elegant dark-mode grid lines */
+.dark-theme .bg-grid-pattern {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px) !important;
+}
+
+/* Opaque Solid styling for Side Drawers and Popovers in Dark Mode */
+.dark-theme .profile-drawer-panel,
+.dark-theme .profile-drawer-panel.bg-white {
+  background-color: color-mix(in srgb, var(--dark-bg, #0f172a) 95%, white 5%) !important;
+  backdrop-filter: none !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: -10px 0 50px rgba(0, 0, 0, 0.8) !important;
+  opacity: 1 !important;
+}
+
+.dark-theme .profile-drawer-header,
+.dark-theme .profile-drawer-footer,
+.dark-theme .profile-drawer-header.bg-slate-50\/70,
+.dark-theme .profile-drawer-footer.bg-slate-50\/70 {
+  background-color: color-mix(in srgb, var(--dark-bg, #0f172a) 93%, white 7%) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: none !important;
+}
+
+/* Edit blocks inside profile drawer */
+.dark-theme .profile-drawer-panel .bg-slate-50,
+.dark-theme .profile-drawer-panel .bg-slate-50\/50,
+.dark-theme .profile-drawer-panel .bg-slate-50\/70,
+.dark-theme .profile-drawer-panel .bg-slate-100 {
+  background-color: color-mix(in srgb, var(--dark-bg, #0f172a) 91%, white 9%) !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+.dark-theme .profile-drawer-panel .bg-white,
+.dark-theme .profile-drawer-panel button.bg-white {
+  background-color: color-mix(in srgb, var(--dark-bg, #0f172a) 89%, white 11%) !important;
+  border-color: rgba(255, 255, 255, 0.07) !important;
+  backdrop-filter: none !important;
+}
+
+.dark-theme .profile-drawer-panel .hover\:bg-slate-50:hover,
+.dark-theme .profile-drawer-panel .hover\:bg-slate-100:hover {
+  background-color: color-mix(in srgb, var(--dark-bg, #0f172a) 85%, white 15%) !important;
+}
+
+.dark-theme .profile-drawer-panel .text-slate-700,
+.dark-theme .profile-drawer-panel .text-slate-800 {
+  color: #f1f5f9 !important;
+}
+
+.dark-theme .profile-drawer-panel label {
+  color: #94a3b8 !important;
+}
+
+/* All generic dialogs, absolute popups, floating reaction pickers, dropdown lists, and menus */
+.dark-theme [role="dialog"],
+.dark-theme .absolute.bg-white,
+.dark-theme .fixed.bg-white {
+  background-color: color-mix(in srgb, var(--dark-bg, #0f172a) 93%, white 7%) !important;
+  backdrop-filter: none !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  opacity: 1 !important;
+}
+
+/* Solid panel background mappings */
+.dark-theme .bg-slate-50,
+.dark-theme .bg-slate-100,
+.dark-theme .bg-gray-50,
+.dark-theme .bg-gray-100,
+.dark-theme .bg-[var(--app-bg,\#fafafa)] {
+  background-color: var(--dark-bg, #0f172a) !important;
+}
+
+/* Glassmorphism for cards & items (instead of pure white) */
+.dark-theme .bg-white,
+.dark-theme .bg-slate-50\/40,
+.dark-theme .bg-white\/40,
+.dark-theme .bg-white\/80,
+.dark-theme .bg-white\/90 {
+  background-color: rgba(255, 255, 255, 0.035) !important;
+  backdrop-filter: blur(14px) saturate(120%) !important;
+  border-color: rgba(255, 255, 255, 0.07) !important;
+}
+
+/* Sub-card active/inactive backgrounds */
+.dark-theme .bg-slate-150,
+.dark-theme .bg-slate-200\/10,
+.dark-theme .bg-slate-150\/20 {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+/* Hover selections */
+.dark-theme .hover\:bg-slate-100:hover,
+.dark-theme .hover\:bg-slate-50:hover,
+.dark-theme .hover\:bg-gray-50:hover,
+.dark-theme .hover\:bg-slate-50\/40:hover,
+.dark-theme .hover\:bg-white\/50:hover {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Core dark mode text colours mapping */
+.dark-theme .text-slate-900,
+.dark-theme .text-slate-800,
+.dark-theme .text-slate-700,
+.dark-theme .text-gray-900,
+.dark-theme .text-gray-800 {
+  color: #f8fafc !important;
+}
+
+.dark-theme .text-slate-650,
+.dark-theme .text-slate-600,
+.dark-theme .text-slate-500,
+.dark-theme .text-slate-550,
+.dark-theme .text-gray-600,
+.dark-theme .text-gray-500 {
+  color: #cbd5e1 !important;
+}
+
+.dark-theme .text-slate-400,
+.dark-theme .text-gray-400 {
+  color: #94a3b8 !important;
+}
+
+/* Beautiful borders without light-mode glare */
+.dark-theme .border-slate-100,
+.dark-theme .border-slate-250,
+.dark-theme .border-slate-200,
+.dark-theme .border-gray-150,
+.dark-theme .border-gray-200,
+.dark-theme .border-slate-250\/50,
+.dark-theme .border-slate-200\/60,
+.dark-theme .border-white\/10 {
+  border-color: rgba(255, 255, 255, 0.07) !important;
+}
+
+/* Input boxes & dialog fields styled in glassmorphic graphite */
+.dark-theme input:not([type="checkbox"]):not([type="radio"]),
+.dark-theme textarea,
+.dark-theme select {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+  border-color: rgba(255, 255, 255, 0.09) !important;
+  color: #f8fafc !important;
+}
+
+.dark-theme select option {
+  background-color: #0f172a !important;
+  color: #f8fafc !important;
+}
+
+.dark-theme input::placeholder,
+.dark-theme textarea::placeholder {
+  color: #64748b !important;
+}
+
+/* Glowing rings & realistic deep pitch-black drop shadows */
+.dark-theme .shadow-sm,
+.dark-theme .shadow-md,
+.dark-theme .shadow-lg,
+.dark-theme .shadow-xl,
+.dark-theme .shadow-2xl,
+.dark-theme .shadow-xs {
+  box-shadow: 0 10px 45px -10px rgba(0, 0, 0, 0.75) !important;
+}
+
+/* White text remains pristine check */
+.dark-theme .text-white {
+  color: #ffffff !important;
+}
+
+.dark-theme .text-indigo-600 {
+  color: #818cf8 !important; /* Soften indigo for high-legibility dark mode */
+}
+.dark-theme .hover\:text-indigo-600:hover {
+  color: #a5b4fc !important;
+}
+
+.dark-theme .bg-indigo-50 {
+  background-color: rgba(129, 140, 248, 0.08) !important;
+}
+
+@layer utilities {
+  .bg-grid-pattern {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+}
+
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}

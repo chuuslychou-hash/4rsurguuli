@@ -1,0 +1,79 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Default catch-all denies everything else
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Users collection
+    match /users/{userId} {
+      allow read, write: if true;
+    }
+
+    // Assignments collection
+    match /assignments/{assignmentId} {
+      allow read, write: if true;
+    }
+
+    // Lessons collection
+    match /lessons/{lessonId} {
+      allow read, write: if true;
+    }
+
+    // Student submissions collection
+    match /student_submissions/{submissionId} {
+      allow read, write: if true;
+    }
+
+    // Attendance collection
+    match /attendance/{attendanceId} {
+      allow read, write: if true;
+    }
+
+    // Grades collection
+    match /grades/{gradeId} {
+      allow read, write: if true;
+    }
+
+    // Grade visibility setting collection
+    match /grade_visibility/{visibilityId} {
+      allow read, write: if true;
+    }
+
+    // Simulated Gmail Emails collection
+    match /emails/{emailId} {
+      allow read, write: if true;
+    }
+
+    // Admin requests collection
+    match /admin_requests/{requestId} {
+      allow read, write: if true;
+    }
+
+    // Announcements collection
+    match /announcements/{announcementId} {
+      allow read, write: if true;
+    }
+
+    // Quizzes collection
+    match /quizzes/{quizId} {
+      allow read, write: if true;
+    }
+
+    // Quiz Submissions collection
+    match /quiz_submissions/{submissionId} {
+      allow read, write: if true;
+    }
+
+    // Chat Rooms collection
+    match /chat_rooms/{roomId} {
+      allow read, write: if true;
+    }
+
+    // Chat Messages collection
+    match /chat_messages/{messageId} {
+      allow read, write: if true;
+    }
+  }
+}

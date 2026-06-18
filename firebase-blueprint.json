@@ -1,0 +1,275 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile for teachers and students",
+      "type": "object",
+      "properties": {
+        "role": { "type": "string" },
+        "schoolCode": { "type": "string" },
+        "username": { "type": "string" },
+        "realName": { "type": "string" },
+        "grade": { "type": "string" },
+        "section": { "type": "string" },
+        "subject": { "type": "string" },
+        "password": { "type": "string" }
+      },
+      "required": ["role", "schoolCode", "username", "password"]
+    },
+    "Assignment": {
+      "title": "Assignment",
+      "description": "Assignments created by teachers for students",
+      "type": "object",
+      "properties": {
+        "teacher": { "type": "string" },
+        "subject": { "type": "string" },
+        "className": { "type": "string" },
+        "title": { "type": "string" },
+        "fileName": { "type": "string" },
+        "fileUrl": { "type": "string" },
+        "createdAt": { "type": "object" }
+      },
+      "required": ["teacher", "subject", "className", "title"]
+    },
+    "Lesson": {
+      "title": "Lesson",
+      "description": "Lessons uploaded by teachers",
+      "type": "object",
+      "properties": {
+        "teacher": { "type": "string" },
+        "subject": { "type": "string" },
+        "className": { "type": "string" },
+        "title": { "type": "string" },
+        "videoUrl": { "type": "string" },
+        "lessonType": { "type": "string" },
+        "originalFileName": { "type": "string" },
+        "createdAt": { "type": "object" }
+      },
+      "required": ["teacher", "subject", "className", "title", "videoUrl"]
+    },
+    "StudentSubmission": {
+      "title": "StudentSubmission",
+      "description": "Student homework uploads/submissions",
+      "type": "object",
+      "properties": {
+        "studentUsername": { "type": "string" },
+        "studentName": { "type": "string" },
+        "className": { "type": "string" },
+        "subject": { "type": "string" },
+        "teacher": { "type": "string" },
+        "fileName": { "type": "string" },
+        "fileUrl": { "type": "string" },
+        "createdAt": { "type": "object" }
+      },
+      "required": ["studentUsername", "subject", "teacher", "fileUrl"]
+    },
+    "Attendance": {
+      "title": "Attendance",
+      "description": "Attendance record created by teachers",
+      "type": "object",
+      "properties": {
+        "date": { "type": "string" },
+        "className": { "type": "string" },
+        "data": { "type": "object" },
+        "teacher": { "type": "string" },
+        "createdAt": { "type": "object" }
+      },
+      "required": ["date", "className", "teacher", "data"]
+    },
+    "SimulatedEmail": {
+      "title": "SimulatedEmail",
+      "description": "Simulated verification emails stored for inline client inbox viewing",
+      "type": "object",
+      "properties": {
+        "to": { "type": "string" },
+        "from": { "type": "string" },
+        "subject": { "type": "string" },
+        "code": { "type": "string" },
+        "username": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "read": { "type": "boolean" }
+      },
+      "required": ["to", "from", "subject", "code", "username", "createdAt"]
+    },
+    "Grade": {
+      "title": "Grade",
+      "description": "Student lesson completion status and percentage score graded by a teacher",
+      "type": "object",
+      "properties": {
+        "studentUsername": { "type": "string" },
+        "studentName": { "type": "string" },
+        "className": { "type": "string" },
+        "subject": { "type": "string" },
+        "teacher": { "type": "string" },
+        "lessonId": { "type": "string" },
+        "lessonTitle": { "type": "string" },
+        "status": { "type": "string" },
+        "score": { "type": "number" },
+        "updatedAt": { "type": "object" }
+      },
+      "required": ["studentUsername", "studentName", "className", "subject", "teacher", "lessonId", "lessonTitle"]
+    },
+    "GradeVisibility": {
+      "title": "GradeVisibility",
+      "description": "Setting indicating whether grades are published and visible to students of a specific class and subject",
+      "type": "object",
+      "properties": {
+        "className": { "type": "string" },
+        "subject": { "type": "string" },
+        "teacher": { "type": "string" },
+        "published": { "type": "boolean" },
+        "updatedAt": { "type": "object" }
+      },
+      "required": ["className", "subject", "teacher", "published"]
+    },
+    "AdminRequest": {
+      "title": "AdminRequest",
+      "description": "Credential update request created by admins for users",
+      "type": "object",
+      "properties": {
+        "userKey": { "type": "string" },
+        "currentUsername": { "type": "string" },
+        "currentPassword": { "type": "string" },
+        "requestedUsername": { "type": "string" },
+        "requestedPassword": { "type": "string" },
+        "status": { "type": "string" },
+        "schoolCode": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "author": { "type": "string" }
+      },
+      "required": ["userKey", "currentUsername", "currentPassword", "requestedUsername", "requestedPassword", "status", "schoolCode", "createdAt", "author"]
+    },
+    "Announcement": {
+      "title": "Announcement",
+      "description": "Global announcement banner posted by admins",
+      "type": "object",
+      "properties": {
+        "text": { "type": "string" },
+        "author": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["text", "author", "createdAt"]
+    },
+    "Quiz": {
+      "title": "Quiz",
+      "description": "Quizzes created by teachers for students",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "subject": { "type": "string" },
+        "className": { "type": "string" },
+        "teacher": { "type": "string" },
+        "questions": { "type": "array" },
+        "createdAt": { "type": "object" }
+      },
+      "required": ["title", "subject", "className", "teacher", "questions"]
+    },
+    "QuizSubmission": {
+      "title": "QuizSubmission",
+      "description": "Student quiz submission record with scores",
+      "type": "object",
+      "properties": {
+        "quizId": { "type": "string" },
+        "quizTitle": { "type": "string" },
+        "subject": { "type": "string" },
+        "teacher": { "type": "string" },
+        "studentUsername": { "type": "string" },
+        "studentName": { "type": "string" },
+        "className": { "type": "string" },
+        "score": { "type": "number" },
+        "totalQuestions": { "type": "number" },
+        "submittedAnswers": { "type": "object" },
+        "createdAt": { "type": "object" }
+      },
+      "required": ["quizId", "studentUsername", "score", "totalQuestions"]
+    },
+    "ChatRoom": {
+      "title": "ChatRoom",
+      "description": "Direct message or group class chat room",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "type": { "type": "string" },
+        "schoolCode": { "type": "string" },
+        "members": { "type": "array" },
+        "createdBy": { "type": "string" },
+        "createdAt": { "type": "object" },
+        "lastMessage": { "type": "string" },
+        "lastMessageAt": { "type": "object" }
+      },
+      "required": ["type", "schoolCode", "members", "createdBy"]
+    },
+    "ChatMessage": {
+      "title": "ChatMessage",
+      "description": "Message sent within a ChatRoom",
+      "type": "object",
+      "properties": {
+        "roomId": { "type": "string" },
+        "senderUsername": { "type": "string" },
+        "senderName": { "type": "string" },
+        "senderRole": { "type": "string" },
+        "text": { "type": "string" },
+        "createdAt": { "type": "object" }
+      },
+      "required": ["roomId", "senderUsername", "senderName", "senderRole", "text"]
+    }
+  },
+  "firestore": {
+    "chat_rooms/{roomId}": {
+      "schema": "ChatRoom",
+      "description": "Collection of direct and group chats"
+    },
+    "chat_messages/{messageId}": {
+      "schema": "ChatMessage",
+      "description": "Collection of chat messages across all rooms"
+    },
+    "quizzes/{quizId}": {
+      "schema": "Quiz",
+      "description": "Quizzes collection"
+    },
+    "quiz_submissions/{submissionId}": {
+      "schema": "QuizSubmission",
+      "description": "Student quiz submissions collection"
+    },
+    "emails/{emailId}": {
+      "schema": "SimulatedEmail",
+      "description": "Simulated emails for verification flow to render in Gmail Client Simulator"
+    },
+    "users/{userId}": {
+      "schema": "User",
+      "description": "Users stored by a composite user key"
+    },
+    "assignments/{assignmentId}": {
+      "schema": "Assignment",
+      "description": "Assignments collection"
+    },
+    "lessons/{lessonId}": {
+      "schema": "Lesson",
+      "description": "Lessons collection"
+    },
+    "student_submissions/{submissionId}": {
+      "schema": "StudentSubmission",
+      "description": "Student homework submissions collection"
+    },
+    "attendance/{attendanceId}": {
+      "schema": "Attendance",
+      "description": "Attendance records collection"
+    },
+    "grades/{gradeId}": {
+      "schema": "Grade",
+      "description": "Grades for student lesson completion and score percentage"
+    },
+    "grade_visibility/{visibilityId}": {
+      "schema": "GradeVisibility",
+      "description": "Grade visibility settings managed by teachers"
+    },
+    "admin_requests/{requestId}": {
+      "schema": "AdminRequest",
+      "description": "User credential reset/change requests"
+    },
+    "announcements/{announcementId}": {
+      "schema": "Announcement",
+      "description": "Global and system-wide announcements and alerts"
+    }
+  }
+}
